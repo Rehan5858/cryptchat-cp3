@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "559835501063",
+    "project_id": "cryptchat-cp-454fe",
+    "storage_bucket": "cryptchat-cp-454fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559835501063:android:42014e31eb8cec3b2910a2",
+        "android_client_info": {
+          "package_name": "com.example.cryptchat_cp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "559835501063-j5dced2s8v3a5kg7dm91es56gttjuhvb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByz62Y1t9CyJ6omf-XYw0SAJo_4qYH5UI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "559835501063-j5dced2s8v3a5kg7dm91es56gttjuhvb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    android:layout_height="match_parent">
+
+
+   <TextView
+       android:textColor="@color/storage_color_videos"
+       android:textSize="10sp"
+       android:text=""
+       android:fontFamily="@font/intermedium"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:id="@+id/searchViewUserList"
+      >
+   </TextView>
+    <include layout="@layout/check_internet_connection"
+        android:id="@+id/incld_fu"
+        />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:id="@+id/shimmerFindUser">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/shimmer_find_user"/>
+            <include layout="@layout/shimmer_find_user"/>
+            <include layout="@layout/shimmer_find_user"/>
+            <include layout="@layout/shimmer_find_user"/>
+            <include layout="@layout/shimmer_find_user"/>
+            <include layout="@layout/shimmer_find_user"/>
+            <include layout="@layout/shimmer_find_user"/>
+            <include layout="@layout/shimmer_find_user"/>
+
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+   <androidx.recyclerview.widget.RecyclerView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/userList"
+       android:scrollbars="vertical"
+       >
+   </androidx.recyclerview.widget.RecyclerView>
+
+         <com.airbnb.lottie.LottieAnimationView
+             android:id="@+id/emptyViewfindUser"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:visibility="gone"
+             app:lottie_autoPlay="true"
+             app:lottie_loop="true"
+             app:lottie_rawRes="@raw/emptycontactlist" />
+    <TextView
+        android:id="@+id/emptyTextViewFindUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/intermedium"
+        android:text="No user from your contact list uses CryptChat"
+        android:textColor="@color/transparent_white_40"
+        android:textSize="15sp"
+        android:visibility="gone"
+         />
+
+</LinearLayout>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="?selectableItemBackground"
+    android:id="@+id/layoutF"
+    android:layout_margin="10dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/search_view_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/senderShimmer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/intermedium"
+            android:gravity="center"
+            android:text=""
+            android:background="@drawable/search_view_back"
+            android:textColor="@color/white"
+            android:textFontWeight="700"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/viewShimmer"
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:visibility="visible"
+            android:background="@color/transparent_white_40"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/senderShimmer" />
+
+        <TextView
+            android:id="@+id/messageShimmer"
+            android:layout_width="223dp"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:background="@drawable/search_view_back"
+            android:text="    "
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/senderShimmer"
+            app:layout_constraintHorizontal_bias="0.095"
+            app:layout_constraintStart_toStartOf="@+id/senderShimmer"
+            app:layout_constraintTop_toBottomOf="@+id/senderShimmer"
+            app:layout_constraintVertical_bias="0.333" />
+
+        <TextView
+            android:id="@+id/enc_dataTextViewShimmer"
+            android:layout_width="223dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="  "
+            android:background="@drawable/search_view_back"
+            android:textColor="@color/transparent_white_60"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="@+id/messageShimmer"
+            app:layout_constraintStart_toStartOf="@+id/messageShimmer"
+            app:layout_constraintTop_toBottomOf="@+id/messageShimmer" />
+
+        <ImageView
+            android:id="@+id/lockLShimmer"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:visibility="visible"
+            android:background="@drawable/search_view_back"
+            app:layout_constraintBottom_toBottomOf="@+id/colorIShimmer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.88"
+            app:layout_constraintStart_toEndOf="@+id/messageShimmer"
+            app:layout_constraintTop_toTopOf="@+id/colorIShimmer"
+            app:layout_constraintVertical_bias="0.571"
+           />
+
+        <ImageView
+            android:id="@+id/unlockLShimmer"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/colorIShimmer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.88"
+            app:layout_constraintStart_toEndOf="@+id/messageShimmer"
+            app:layout_constraintTop_toTopOf="@+id/colorIShimmer"
+            app:layout_constraintVertical_bias="0.357"
+             />
+
+        <ImageView
+            android:id="@+id/colorIShimmer"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/enc_dataTextViewShimmer"
+            app:layout_constraintEnd_toStartOf="@+id/lockLShimmer"
+            app:layout_constraintHorizontal_bias="0.406"
+            app:layout_constraintStart_toEndOf="@+id/messageShimmer"
+            app:layout_constraintTop_toTopOf="@+id/messageShimmer"
+            app:srcCompat="@drawable/search_view_back" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <Button-->
+<!--        android:id="@+id/btn_enc_dataShimmer"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:backgroundTint="#3C3C3C"-->
+<!--        android:text="+"-->
+<!--        android:visibility="gone"-->
+<!--        tools:layout_editor_absoluteX="225dp"-->
+<!--        tools:layout_editor_absoluteY="480dp" />-->
+
+
+</LinearLayout>

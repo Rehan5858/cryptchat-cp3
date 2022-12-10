@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ChatActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:id="@+id/topBar"
+        android:background="@color/black"
+        android:layout_height="72dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@drawable/contact_avatar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.048"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/uName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/intermedium"
+                android:text="Name"
+                android:textColor="@color/storage_color_videos"
+                android:textFontWeight="600"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/avatar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.059"
+                app:layout_constraintStart_toEndOf="@+id/avatar"
+                app:layout_constraintTop_toTopOf="@+id/avatar"
+                app:layout_constraintVertical_bias="0.514" />
+
+            <TextView
+                android:id="@+id/uNameAvatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/intermedium"
+                android:text="JP"
+                android:textColor="#F44336"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/avatar"
+                app:layout_constraintEnd_toEndOf="@+id/avatar"
+                app:layout_constraintStart_toStartOf="@+id/avatar"
+                app:layout_constraintTop_toTopOf="@+id/avatar" />
+
+            <LinearLayout
+                android:layout_width="112dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/search_view_back"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.946"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.466">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/colorFilter"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/colorp1" />
+
+                <TextView
+                    android:id="@+id/filterClick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/intermedium"
+                    android:padding="5dp"
+                    android:text="Filter"
+                    android:textColor="@color/white"
+                    android:textFontWeight="600" />
+
+                <ImageView
+                    android:id="@+id/cancelFilter"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ic_baseline_cancel_24" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/incld_chat"
+        layout="@layout/check_internet_connection" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/messageList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sendLayout"
+        android:visibility="visible"
+        android:layout_below="@id/topBar" />
+    <include
+        android:id="@+id/networkError"
+        android:visibility="gone"
+        android:layout_above="@+id/sendLayout"
+        layout="@layout/check_internet_connection"
+        android:layout_width="match_parent"
+        android:layout_below="@id/topBar"
+        android:layout_height="match_parent" />
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sendLayout"
+        android:visibility="visible"
+        android:layout_below="@id/topBar"
+        android:id="@+id/shimmerChatAct">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/shimmer_message"/>
+            <include layout="@layout/shimmer_message"/>
+            <include layout="@layout/shimmer_message"/>
+            <include layout="@layout/shimmer_message"/>
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/emptyViewChat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_above="@+id/sendLayout"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:layout_below="@id/topBar"
+        app:lottie_rawRes="@raw/emptyview" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/sendLayout"
+        android:gravity="center"
+        android:background="@drawable/search_view_back"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_message"
+            android:layout_width="250dp"
+            android:layout_height="52dp"
+            android:layout_margin="2dp"
+            android:windowSoftInputMode="adjustUnspecified"
+            android:layout_marginStart="0dp"
+            android:backgroundTint="@color/transparent"
+            android:hint="New data request"
+            android:padding="10dp"
+            android:inputType="textVisiblePassword"
+            android:singleLine="false"
+            android:paddingRight="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/transparent_white_40"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/send"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="0.2"
+            android:padding="5dp"
+            android:src="@drawable/send_chat"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/colorpicker"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            app:layout_constraintBottom_toBottomOf="@+id/send"
+            app:layout_constraintEnd_toStartOf="@+id/send"
+            app:layout_constraintHorizontal_bias="0.793"
+
+            app:layout_constraintStart_toEndOf="@+id/et_message"
+            app:layout_constraintTop_toTopOf="@+id/send"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/colorp1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CryptChat</string>
+    <string name="onesignal_bgimage_notif_image_align">right</string>
+</resources>

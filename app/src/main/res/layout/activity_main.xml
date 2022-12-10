@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+
+    <LinearLayout
+        android:id="@+id/frst_ll"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/transparent_black_90"
+        android:gravity="center">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/cloudcomputingsecurity" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/frst_ll"
+        android:background="@color/transparent_black_90"
+        android:gravity=""
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/iso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/back_login"
+                android:hint=""
+                android:inputType="phone"
+                android:maxLength="3"
+                android:padding="15dp"
+
+                android:text="+91"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/timer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/back_login"
+                android:gravity="center"
+                android:inputType="phone"
+                android:padding="15dp"
+                android:text="Timer"
+                android:textColor="@color/storage_color_videos"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/phoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/back_login"
+            android:hint="Enter phone number"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:padding="17dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/transparent_white_20" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/frst_ll"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <EditText
+                android:id="@+id/et_1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/back_login"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxWidth="50dp"
+                android:maxLength="1"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="8dp"
+
+                android:background="@drawable/back_login"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxWidth="50dp"
+                android:maxLength="1"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/back_login"
+                android:gravity="center"
+                android:inputType="number"
+
+                android:maxWidth="50dp"
+                android:maxLength="1"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/back_login"
+                android:gravity="center"
+                android:inputType="number"
+
+                android:maxWidth="50dp"
+                android:maxLength="1"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+
+                android:layout_marginRight="8dp"
+                android:background="@drawable/back_login"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxWidth="50dp"
+                android:maxLength="1"
+
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/back_login"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxWidth="50dp"
+                android:maxLength="1"
+
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:text="We will send you a One time SMS message\nCarrier rates may apply"
+            android:textColor="@color/white" />
+
+        <com.kusu.loadingbutton.LoadingButton
+            android:id="@+id/send"
+            android:layout_width="200dp"
+            android:layout_height="51dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/back_login"
+            android:padding="10dp"
+            android:text="Verify Phone Number"
+            android:textColor="@color/storage_color_videos"
+            app:lb_buttonColor="@color/transparent_white_30"
+            app:lb_isCircular="false"
+            app:lb_isShadowEnable="false"
+            app:lb_loaderColor="@color/white" />
+
+    </LinearLayout>
+
+</RelativeLayout>
